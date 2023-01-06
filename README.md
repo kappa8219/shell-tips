@@ -13,7 +13,7 @@ _Warning! Use it strictly on your own risk_
 aws --profile PROFILE iam update-login-profile --user-name USER --password
 ```
 
-### Search for something in some ~~trashcan~~ S3 bucket. Second is itarate over buckets and threaded tool usage
+### Search for something in some ~~trashcan~~ S3 bucket. Second is iterate over buckets with threaded tool
 ```shell
 aws --profile PROFILE s3 ls s3://BUCKET/ --recursive | grep PATTERN
 for b in $(s4cmd -r ls | grep ftp | awk '{print $4}') ; do s4cmd -r ls ${b}1465/ ; done
