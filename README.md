@@ -7,7 +7,7 @@ DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm 
 _Warning! Use it strictly on your own risk_ 
 _Note! Feel free to add some variation or idea for another approach_
 
-### AWS
+## AWS
 
 ### Update user password (your cap)
 ```shell
@@ -30,7 +30,7 @@ aws --profile PROFILE ec2 describe-subnets --filters "Name=vpc-id,Values=VPC_ID"
 for u in $(aws --profile PROFILE iam list-users  | jq ".Users[].UserName" --raw-output); do   aws --profile PROFILE iam list-access-keys --user $u | jq '.AccessKeyMetadata[] | .UserName + ":" + .AccessKeyId' ; done
 ```
 
-### K8S
+## K8S
 
 ### See Events sorted by timestamp
 ````shell
