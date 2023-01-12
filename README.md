@@ -5,6 +5,7 @@
 DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm lasy :)
 
 _Warning! Use it strictly on your own risk_ 
+_Note! Feel free to add some variation or idea for another approach_
 
 ### AWS
 
@@ -41,9 +42,10 @@ k get events --sort-by='.lastTimestamp'
 cp ~/.kube/config ~/.kube/config.bak && KUBECONFIG=~/.kube/config:./ok-cluster/ok-cluster-eks-a-cluster.kubeconfig kubectl config view --flatten > /tmp/config && mv /tmp/config ~/.kube/config
 ```
 
-### Add profile to kubeconfig
+### Add profile to kubeconfig, all of profiles all clusters
 ```shell
 aws eks --profile ok-dev update-kubeconfig --name eks-terra --alias ok-eks
+for p in $(aws configure list-profiles) ; do for c in $(aws eks --profile $p list-clusters | jq '.clusters[]' | tr -d '\"') ; do echo $p $c ; aws eks --profile $p update-kubeconfig --name $c --alias $p:$c ; done ; done
 ```
 
 ### Saving ~~private~~ persistent volume
