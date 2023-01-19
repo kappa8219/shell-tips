@@ -1,11 +1,33 @@
-# ok-shell-tips
 
-## Just some stuff that I'm too bored to write again and too lasy to develop into separate tool
-
+Just some stuff that I'm too bored to write again and too lasy to develop into separate tool
 DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm lasy :)
 
-_Warning! Use it strictly on your own risk_ 
+_Warning! Use it strictly on your own risk_
+
 _Note! Feel free to add some variation or idea for another approach_
+
+<!-- TOC -->
+  * [AWS](#aws)
+    * [Update user password (your cap)](#update-user-password--your-cap-)
+    * [Search for something in some ~~trashcan~~ S3 bucket. Second is iterate over buckets with threaded tool](#search-for-something-in-some-trashcan-s3-bucket-second-is-iterate-over-buckets-with-threaded-tool)
+    * [Find subnets that are short of IPs](#find-subnets-that-are-short-of-ips)
+    * [Get all user keys. For blameless security investigation, you know](#get-all-user-keys-for-blameless-security-investigation-you-know)
+  * [K8S](#k8s)
+    * [See Events sorted by timestamp](#see-events-sorted-by-timestamp)
+    * [Merge kubeconfigs](#merge-kubeconfigs)
+    * [Add profile to kubeconfig, all of profiles all clusters](#add-profile-to-kubeconfig-all-of-profiles-all-clusters)
+    * [Saving ~~private~~ persistent volume](#saving-private-persistent-volume)
+    * [Label all nodes with their type and lifecycle, mark your cattle ;)](#label-all-nodes-with-their-type-and-lifecycle-mark-your-cattle--)
+    * [Download and build cdebug on a node](#download-and-build-cdebug-on-a-node)
+    * [Gatekeeper stuff](#gatekeeper-stuff)
+  * [MySQL](#mysql)
+    * [Kill somebody's sessions in RDS](#kill-somebodys-sessions-in-rds)
+    * [Self-explanatory](#self-explanatory)
+  * [Other](#other)
+    * [Delete ALL topics in Kafka](#delete-all-topics-in-kafka)
+    * [Inframamp](#inframamp)
+    * [KUBE-OPS-VIEW](#kube-ops-view)
+<!-- TOC -->
 
 ## AWS
 
