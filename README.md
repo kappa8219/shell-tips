@@ -4,7 +4,7 @@ DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm 
 
 _Warning! Use it strictly on your own risk_
 
-_Note! Feel free to add some variation or idea for another approach_
+_Note! Feel free to add some variation or idea for another approach. I'm absolutely fine with evoulution ;)_ 
 
 <!-- TOC -->
   * [AWS](#aws)
