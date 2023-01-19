@@ -1,6 +1,6 @@
 
-Just some stuff that I'm too bored to write again and too lasy to develop into separate tool
-DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm lasy :)
+Just some stuff that I'm too bored to write again and too lasy to develop into separate tool(code).
+DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm lasy :) And yeah I can sleep well after posting such ugly oneliners, so red-eye idealist seemd to be dead (RIP).
 
 _Warning! Use it strictly on your own risk_
 
