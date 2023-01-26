@@ -31,7 +31,7 @@ _Note! Feel free to add some variation or idea for another approach. I'm absolut
 
 ## AWS
 
-### Update user password (your cap)
+### Update user password (cli is the last resort ex.)
 ```shell
 aws --profile PROFILE iam update-login-profile --user-name USER --password
 ```
