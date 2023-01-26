@@ -4,7 +4,7 @@ DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm 
 
 _Warning! Use it strictly on your own risk_
 
-_Note! Feel free to add some variation or idea for another approach_
+_Note! Feel free to add some variation or idea for another approach. I'm absolutely fine with evoulution ;)_ 
 
 <!-- TOC -->
   * [AWS](#aws)
@@ -36,7 +36,7 @@ _Note! Feel free to add some variation or idea for another approach_
 aws --profile PROFILE iam update-login-profile --user-name USER --password
 ```
 
-### Search for something in some ~~trashcan~~ S3 bucket. Second is iterate over buckets with threaded tool
+### Search for something in some ~~trashcan~~ S3 bucket. Second is iterate over buckets with threaded tool(s4cmd)
 ```shell
 aws --profile PROFILE s3 ls s3://BUCKET/ --recursive | grep PATTERN
 for b in $(s4cmd -r ls | grep ftp | awk '{print $4}') ; do s4cmd -r ls ${b}1465/ ; done
