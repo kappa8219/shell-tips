@@ -1,10 +1,8 @@
 
 Just some stuff that I'm too bored to write again and too lasy to develop into separate tool(code).
-DevOps Automation routines mostly. Maybe some of them lack explanation, but I'm lasy :) And yeah I can sleep well after posting such ugly oneliners, so red-eye idealist seems to be dead (RIP).
+DevOps Automation routines mostly. 
 
 _Warning! Use it strictly on your own risk_
-
-_Note! Feel free to add some variation or idea for another approach. I'm absolutely fine with evoulution ;)_ 
 
 <!-- TOC -->
   * [AWS](#aws)
@@ -50,6 +48,18 @@ aws --profile PROFILE ec2 describe-subnets --filters "Name=vpc-id,Values=VPC_ID"
 ### Get all user keys. For blameless security investigation, you know
 ```shell
 for u in $(aws --profile PROFILE iam list-users  | jq ".Users[].UserName" --raw-output); do   aws --profile PROFILE iam list-access-keys --user $u | jq '.AccessKeyMetadata[] | .UserName + ":" + .AccessKeyId' ; done
+```
+
+## SSM tips
+### Get all instances with inventory without those in terminated state.
+_Terminated instances sometimes are a problem._ [More about it.](https://stackoverflow.com/questions/73730736/how-can-terminated-instances-be-removed-from-aws-ssms-inventory/78407011#78407011)
+```shell
+aws ssm get-inventory --filters '[{"Key":"AWS:InstanceInformation.InstanceStatus","Values":["terminated"],"Type":"NotEqual"}]'
+```
+_One more tip is to send huge jsons to_ [gron](https://github.com/tomnomnom/gron). **Gr**ep Js**on**.
+### Connect to an instance by name
+```shell
+aws ssm start-session --target INSTANCE_NAME
 ```
 
 ## K8S
@@ -104,6 +114,11 @@ WHERE user='UGLY_BASTARD';
 ```SQL
 SHOW OPEN TABLES WHERE In_use > 0;
 SHOW ENGINE INNODB STATUS;
+```
+
+### Skip replication errors, read error-logs before skipping. It is important to understand what you are skipping.
+```SQL
+CALL mysql.rds_skip_repl_error;
 ```
 
 ## Other
