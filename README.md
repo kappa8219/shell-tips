@@ -101,11 +101,6 @@ yum install wget -y ; yum install unzip -y ; wget https://github.com/iximiuz/cde
 kubectl debug -it POD --image=IMAGE_WITH_TOOLS --target=CONT --share-processes
 ```
 
-### Gatekeeper stuff 
-```shell
-for c in $(kubectl api-resources | grep constraints.gatekeeper.sh/v1beta1 | awk '{print $1}') ; do k describe $c ; done | less
-````
-
 ## MySQL
 
 ### Kill somebody's sessions in RDS
