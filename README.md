@@ -91,11 +91,6 @@ kubectl patch pv $PV_NAME_i -p \
 for n in $(kubectl get nodes -o 'jsonpath={.items[*].metadata.name}') ; do lb="" ;  for a in $(kubectl label --list nodes $n | sort | grep -e NodeType -e lifecycle | cut -d= -f 2) ; do lb="${lb}$a" ; done ; kubectl label nodes $n node-role.kubernetes.io/$lb= ; done
 ```
 
-### Download and build cdebug on a node
-```shell
-yum install wget -y ; yum install unzip -y ; wget https://github.com/iximiuz/cdebug/archive/refs/heads/main.zip && unzip main.zip && cd cdebug-main/ && yum install go make -y ; make
-```
-
 ### Debugging a distroless(ex.) pod
 ```shell
 kubectl debug -it POD --image=IMAGE_WITH_TOOLS --target=CONT --share-processes
