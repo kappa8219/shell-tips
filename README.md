@@ -96,6 +96,11 @@ for n in $(kubectl get nodes -o 'jsonpath={.items[*].metadata.name}') ; do lb=""
 yum install wget -y ; yum install unzip -y ; wget https://github.com/iximiuz/cdebug/archive/refs/heads/main.zip && unzip main.zip && cd cdebug-main/ && yum install go make -y ; make
 ```
 
+### Debugging a distroless(ex.) pod
+```shell
+kubectl debug -it POD --image=IMAGE_WITH_TOOLS --target=CONT --share-processes
+```
+
 ### Gatekeeper stuff 
 ```shell
 for c in $(kubectl api-resources | grep constraints.gatekeeper.sh/v1beta1 | awk '{print $1}') ; do k describe $c ; done | less
